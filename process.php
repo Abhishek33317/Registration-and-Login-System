@@ -11,13 +11,13 @@ if(isset($_POST['submit']))
 	$msg=mysqli_query($connection,$query);
 
 
-if ($connection->query($msg) === TRUE)
+if (mysqli_query($connection,$query)) 
 {
-    echo "New record created successfully";
-} 
-else
+  echo "New record created successfully";
+ } 
+else 
 {
-    echo "Error: " . $msg . "<br>" . $connection->error;
+echo "Error: " . $query . "" . mysqli_error($connection);
 }
 }
 ?>
