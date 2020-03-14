@@ -7,7 +7,9 @@ if(isset($_POST['submit']))
 	$name=$_POST['name'];
 	$email=$_POST['email'];
 	$password=$_POST['password'];
-	$msg=mysqli_query($connection,"insert into user(name,email,password) values('$name','$email','$password')");
+	$query="INSERT INTO `user`(`Id`, `name`, `email`, `password`) VALUES ('','$name','$email','$password')";
+	$msg=mysqli_query($connection,$query);
+
 
 if ($connection->query($msg) === TRUE)
 {
@@ -19,3 +21,4 @@ else
 }
 }
 ?>
+
